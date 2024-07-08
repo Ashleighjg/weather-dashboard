@@ -171,9 +171,9 @@ const formSubmitHandler = function (event) {
     for (let i = 0; i < dayArray.length; i++) {
       console.log(dayArray[i]);
     
-    };
-  }
-      /*const temp = dayArray[i].main.temp;
+    dayArray.forEach(day => {
+
+      const temp = day.main.temp;
       const humidity = dayArray[i].main.humidity;
       const windSpeed = dayArray[i].wind.speed;
       const now = dayArray[i].dt_txt;
@@ -202,15 +202,20 @@ const formSubmitHandler = function (event) {
       // Append the card header and card body to the card.
       cardBodyF.append(cardTemp, cardHumidity, cardWindspeed, cardIcon);
       futureCard.append(cardHeaderF, cardBodyF);
-
+      futureContainerEl.append(futureCard);
 
 
 // ? Return the card so it can be appended 
-      return futureCard;
-      futureContainerEl.append(futureCard);
-    };
+      return futureContainerEl;
+      
+      
+    });
+
+    }
+  
+      
               
-*/
+  };
 
 
 
