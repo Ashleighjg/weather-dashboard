@@ -53,12 +53,16 @@
     <div class="col-12 col-md-9 p-3 text-dark">
       <h2 class="subtitle">Showing weather for: <span id="city-search-term"></span></h2>
       <div id="current-container" class="card-body">
-        <div class="currentweather">
-            <figure class="card">
-              <h3 class="card-header"></h3>
-              <div class="card-body"></div>
-            </figure>
-          </div>
+        <div id="current-weather">
+          <figure class="card">
+            <h3 id="card-header"></h3>
+            <div id="card-body">
+              <p id="current-temp"></p>
+              <p id="current-humidity"></p>
+              <p id="current-wind"></p>
+            </div>
+          </figure>
+        </div>
       </div>
       <br>
       <h2 class="subtitle">5-Day Forecast:</h2>
@@ -98,6 +102,13 @@
     </div>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
