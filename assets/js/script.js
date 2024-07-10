@@ -124,10 +124,10 @@ const displayCurrentWeather = function (data) {
   const temp = data.main.temp;
   const humidity = data.main.humidity;
   const windSpeed = data.wind.speed;
-  const now = dayjs().format("dddd, MMMM M, YYYY");
+  const now = dayjs();
   const cityName = data.name;
-  console.log(cityName);
-
+  
+console.log(data.weather.main);
   const currentCard = document.createElement("div");
   const city = document.createElement("h1");
   const cardHeader = document.createElement("h3");
@@ -141,7 +141,7 @@ const displayCurrentWeather = function (data) {
   currentTemp.innerHTML = `Temp : ${data.main.temp} `;
   currentHumidity.innerHTML = `Humidity : ${data.main.humidity}`;
   currentWind.innerHTML = `Wind Speed : ${data.wind.speed}`;
-  cardIcon.innerHTML = `Icon`;
+  cardIcon.innerHTML = `Weather : ${data.weather[0].main}`;
   currentCard.setAttribute("class", "card");
   city.setAttribute("class", "city-subtitle");
   cardHeader.setAttribute("class", "card-header");
@@ -179,15 +179,7 @@ const getFutureWeather = function (data) {
     }
   });
 
-  /*fetch(queryUrl).then(function(res){
-        return res.json()
-      }).then(function(data){
-        console.log(data)
-        displayFutureWeather(data)
-      }).catch(function(err){
-        console.error(err)
-      })
-*/
+
 };
 
 const displayFutureWeather = function (data) {
@@ -201,11 +193,11 @@ const displayFutureWeather = function (data) {
 
   //let dayArray = [data.list[4], data.list[12], data.list[20], data.list[28], data.list[36]]
 
-  const day1 = data.list[4];
-  const day2 = data.list[12];
-  const day3 = data.list[20];
-  const day4 = data.list[28];
-  const day5 = data.list[36];
+  const day1 = data.list[5];
+  const day2 = data.list[13];
+  const day3 = data.list[21];
+  const day4 = data.list[29];
+  const day5 = data.list[37];
 
   let dayArray = [day1, day2, day3, day4, day5];
   const parenttodiv = document.createElement('div');
@@ -231,7 +223,7 @@ const displayFutureWeather = function (data) {
     currentTemp.innerHTML = `Temp : ${dayArray[i].main.temp} `;
     currentHumidity.innerHTML = `Humidity : ${dayArray[i].main.humidity}`;
     currentWind.innerHTML = `Wind Speed : ${dayArray[i].wind.speed}`;
-    cardIcon.innerHTML = `Icon`;
+    cardIcon.innerHTML = `Weather : ${dayArray[i].weather[0].main}`;
 
     futureCard.setAttribute("class", "card");
     cardHeader.setAttribute("class", "card-header");
@@ -257,6 +249,8 @@ const displayFutureWeather = function (data) {
     //return futureContainerEl;
 
     //});
+
+    
   }
   console.log(parenttodiv);
   futureContainerEl.appendChild(parenttodiv);
